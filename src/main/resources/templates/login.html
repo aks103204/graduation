@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="doctor/css/login.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="doctor/js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="doctor/js/jquery.cookie.js"></script>
+  <script src="doctor/js/change.js" language="javascript" type="text/javascript"></script>
+  <script>
+      var addCookie = function (name, value) {
+        document.cookie = name + "=" + value;
+      }
+      function register() {
+        alert("仅向患者提供注册服务,在线注册后需要绑定负责医生!")
+        window.location="patient/patient_register.html"
+      }
+    function login() {
+      var username = $("#username").val();
+      var password = $("#password").val();
+      var sel =document.getElementById('select1').innerText;
+      var type;
+      if(sel=="管理员"){
+        type="admin";
+      }else if(sel=="患者"){
+        type="patient"
+      }else if(sel=="医生"){
+        type="doctor"
+      }
+      alert(sel);
+      if ((username == "" || username.length < 0) || (password == "" || password.length < 0)) {
+        alert("必须输入用户名和密码");
+        return;
+      }
+      var ADMIN_LOGIN_URL = "http://localhost:8080/admin/login/" + username + "/" + password;  //Rustful风格
+      var PATIENT_LOGIN_URL = "http://localhost:8080/patient/login/" + username + "/" + password;  //Rustful风格
+      var DOCTOR_LOGIN_URL = "http://localhost:8080/doctor/login/" + username + "/" + password;  //Rustful风格
+      if (type == "admin") {
+        $.ajax({
+          contentType: "application/json",
+          url: ADMIN_LOGIN_URL,
+          type: "POST",
+          statusCode: {
+            200: function (data) {
+              addCookie("ano", username);
+              window.location = "admin/admin_index.html";
+            },
+            404: function () {
+              alert("用户名或密码错误！");
+              window.location = "login.html";
+            }
+          }
+
+        });
+      } else if (type == "patient") {
+        $.ajax({
+          contentType: "application/json",
+          url: PATIENT_LOGIN_URL,
+          type: "POST",
+          statusCode: {
+            200: function (data) {
+              addCookie("pno", username);
+              window.location = "patient/patient_index.html";
+            },
+            404: function () {
+              alert("用户名或密码错误！");
+              window.location = "index.jsp";
+            }
+          }
+        });
+      } else if (type == "doctor") {
+        $.ajax({
+          contentType: "application/json",
+          url: DOCTOR_LOGIN_URL,
+          type: "POST",
+          statusCode: {
+            200: function (data) {
+              addCookie("dno", username);
+              window.location = "doctor/doctor_index.html";
+            },
+            404: function () {
+              alert("用户名或密码错误！");
+              window.location = "index.jsp";
+            }
+          }
+        });
+      }
+    }
+
+  </script>
+</head>
+
+<body>
+<div id="con">
+  <div class="container">
+    <div class="logo-head">
+      <div class="logo-img">
+       <img src="doctor/images/txt.png" alt=""/>
+      </div>
+    </div>
+    <div class="login-line">
+      <div class="login-box">
+        <div class="login-box-in">
+          <div class="login-box-mode" onblur="this.className='login-box-mode';this.onmouseout=function(){this.className='fouce'};" onmousemove="this.className='fouce'" onmouseout="this.className='login-box-mode'">
+            <span> <img src="doctor/images/use.png" width="16" height="16" alt="" /></span>
+            <input name="" type="text" id="username" class="text" value="请输入用户名" />
+          </div>
+          <div class="login-box-mode" onblur="this.className='login-box-mode';this.onmouseout=function(){this.className='fouce'};" onmousemove="this.className='fouce'" onmouseout="this.className='login-box-mode'">
+            <span><img src="doctor/images/key.png" width="16" height="16" alt="" /></span>
+            <label id="pow_tips">请输入密码</label>
+            <input name="" type="password" class="text" id="password" value="" />
+          </div>
+
+          <div class="login-box-mode">
+          <span style="padding-top:8px;"><img src="doctor/images/sel.png" width="16" height="16" alt="" /></span>
+          <label class="select_t" id="select1">身份选择</label>
+          <a href="#" class="on"></a>
+              <ul class="option">
+              <li id="doctor">医生</li>
+              <li id="patient">患者</li>
+              <li id="admin">管理员</li>
+            </ul>
+        </div>
+          <input type="image" onclick="login()" src="doctor/images/login.gif" >
+          <input type="image" onclick="register()" src="doctor/images/register.gif" >
+        </div>
+      </div>
+    </div>
+    <div class="copy"><p>Copyright © 2013 智业软件  zoesoft. All rights reserved.</p>Copyright © 2013 智业软件  zoesoft. All rights reserved.</div>
+  </div>
+</div>
+
+</body>
+
+<!--[if IE 6]>
+<script src="doctor/js/EvPng.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+  EvPNG.fix("*");
+</script>
+<![endif]-->
+</html>

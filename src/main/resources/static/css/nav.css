@@ -1,0 +1,99 @@
+.navbar-default { border-bottom-color: #e7e7e7; }
+
+.nav a { padding-top: 6px!important; padding-bottom: 6px!important; }
+.nav li a { color:#2a6496; display: block;height: 42px; line-height:30px; }
+.nav li a:hover { color:#3b8fd7; }
+.nav .icon{ font-size: 16px; }
+
+@font-face {font-family: "iconfont";
+  src: url('../fonts/iconfont.eot'); /* IE9*/
+  src: url('../fonts/iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('../fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*信*/
+.icon-xin:before { content: "\e613"; }
+/*铃铛*/
+.icon-lingdang:before { content: "\e617"; }
+/*个人*/
+.icon-mine:before { content: "\e614"; }
+/*密码*/
+.icon-key:before { content: "\e611"; }
+/*气泡*/
+.icon-qipao:before { content: "\e61a"; }
+/*退出*/
+.icon-goout:before { content: "\e616"; }
+/*首页*/
+.icon-shouye:before { content: "\e60d"; }
+/*学校管理*/
+.icon-xuexiaoguanli:before { content: "\e60e"; }
+/*教师管理*/
+.icon-jiaoshiguanli:before { content: "\e610"; }
+/*教学管理*/
+.icon-jiaoxueguanli:before { content: "\e60b"; }
+/*学生管理*/
+.icon-xueshengguanli:before { content: "\e60f"; }
+/*实践教学*/
+.icon-shijianjiaoxue:before { content: "\e60a"; }
+/*数据统计*/
+.icon-shujutongji:before { content: "\e60c"; }
+/*流程管理*/
+.icon-liuchengguanli:before { content: "\e63b"; }
+/*数据字典*/
+.icon-shujuzidian:before { content: "\e631"; }
+
+/*个人信息*/
+.icon-gerenxinxi:before { content: "\e62e"; }
+/*通讯录*/
+.icon-tongxunlu:before { content: "\e638"; }
+/*课程表*/
+.icon-kechengbiao:before { content: "\e626"; }
+/*请假*/
+.icon-qingjia:before { content: "\e646"; }
+/*资源云*/
+.icon-ziyuanyun:before { content: "\e639"; }
+/*云课堂*/
+.icon-yunketang:before { content: "\e627"; }
+/*顶岗实习*/
+.icon-dinggangshixi:before { content: "\e63a"; }
+/*毕业论文*/
+.icon-biyelunwen:before { content: "\e633"; }
+/*我的工作*/
+.icon-wodegongzuo:before { content: "\e640"; }
+/*我的圈子*/
+.icon-wodequanzi:before { content: "\e641"; }
+
+/*教务处*/
+.icon-jiaowuchu:before { content: "\e645"; }
+/*指导老师*/
+.icon-zhidaolaoshi:before { content: "\e627"; }
+/*管理员*/
+.icon-guanliyuan:before { content: "\e63c"; }
+/*毕业论文教务处*/
+.icon-lunwenjiaowu:before { content: "\e648"; }
+/*组长*/
+.icon-zuzhang:before { content: "\e62f"; }
+
+
+/*资源云*/
+.icon-ziyuanyun:before { content: "\e639"; }
+/*云课堂*/
+.icon-yunketang:before { content: "\e627"; }
+/*顶岗实习*/
+.icon-dinggangshixi:before { content: "\e63a"; }
+/*毕业论文*/
+.icon-biyelunwen:before { content: "\e633"; }
+/*我的工作*/
+.icon-wodegongzuo:before { content: "\e640"; }

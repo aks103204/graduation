@@ -1,0 +1,12 @@
+table.search_result th { text-align: center!important; padding-left: 3px!important; padding-right: 3px!important; vertical-align: middle!important;}
+table.search_result th.chk { width: 16px!important; padding-left: 3px!important; padding-right: 3px!important; }
+table.search_result th.no { width: 35px!important; padding-left: 3px!important; padding-right: 3px!important; }
+table.search_result th.action { min-width: 50px!important;}
+
+table.search_result td { padding-left: 3px!important; padding-right: 3px!important; vertical-align: middle!important;}
+table.search_result td.chk { text-align: center!important; }
+table.search_result td.no { text-align: center!important; }
+table.search_result td.number { text-align: right!important; }
+table.search_result td.mcode { text-align: center!important; }
+table.search_result td.date { text-align: center!important; }
+table.search_result td.action { text-align: center!important; }

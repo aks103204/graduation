@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>无标题文档</title>
+  <link href="../doctor/css/layout.css" rel="stylesheet" type="text/css"/>
+  <link href="../doctor/css/jquery.jscrollpane.lozenge.css" rel="stylesheet" type="text/css"/>
+  <link href="../doctor/css/jquery.jscrollpane.css" rel="stylesheet" type="text/css"/>
+  <script src="../doctor/js/jquery-3.1.1.min.js" language="javascript"
+          type="text/javascript"></script>
+  <script src="../doctor/js/jquery.mousewheel.js" type="text/javascript"></script>
+  <script src="../doctor/js/jquery.jscrollpane.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="../doctor/js/jquery.touchSlider.js"></script>
+  <script type="text/javascript" src="../doctor/js/jquery.nicescroll.js"></script>
+  <script src="../doctor/js/slide.js" language="javascript" type="text/javascript"></script>
+  <script>
+    $(function () {
+      if (getCookie("ano") == null) {
+        alert("请先登陆后访问此网页！");
+        window.location = "../login.html"
+      }
+    })
+    var getCookie = function (name) {
+      //获取当前所有cookie
+      var strCookies = document.cookie;
+      //截取变成cookie数组
+      var array = strCookies.split(';');
+      //循环每个cookie
+      for (var i = 0; i < array.length; i++) {
+        //将cookie截取成两部分
+        var item = array[i].split("=");
+        //判断cookie的name 是否相等
+        if (item[0] == name) {
+          return item[1];
+        }
+      }
+      return null;
+    }
+    var delCookie = function (name) {
+      var exp = new Date();
+      exp.setTime(exp.getTime() - 1);
+      //获取cookie是否存在
+      var value = getCookie(name);
+      if (value != null) {
+        document.cookie = name + "=" + escape("") + ";expires=" + exp.toUTCString() + ";path=/";
+      }
+    }
+
+    function quit() {
+      delCookie("ano");
+      window.location = "../login.html";
+    }
+
+    function show1() {
+      document.getElementById("twodm").style.display = "block";
+    }
+
+    $(function () {
+      var ano = getCookie("ano");
+      var a = ["日", "一", "二", "三", "四", "五", "六"];
+      var str = new Date().getDay();
+      var week = "星期" + a[str];
+      var day = new Date().getDate();
+      $("#week").html(week);
+      $("#day").html(day);
+      var ADMIN_INFO_URL = "http://localhost:8080/admin/admin_Info/" + ano;
+      $.ajax({
+        contentType: "application/json",
+        url: ADMIN_INFO_URL,
+        dataType: "text json",
+        type: "post",
+        statusCode: {
+          200: function (data) {
+            $(data).each(function (index, value) {
+              $("#name").html(value.adminName);
+            });
+          },
+          404: function () {
+            alert("登陆失败！");
+            window.location = "index.jsp";
+          }
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+<!--背景-->
+<div class="background"><img src="../doctor/images/bg1.jpg" alt=""/>
+  <div class="logo"></div>
+</div>
+<!--主内容开始-->
+<div id="container">
+  <div id="head">
+    <a href="#" class="arrange" id="arrange"></a>
+    <div class="h-right">
+      <a href="admin_index.html" class="home"></a>
+      <img src="../doctor/images/line.png" width="2" height="50" alt=""/>
+      <a href="#" class="cloud" id="cloud">
+        <div class="same">云同步</div>
+      </a>
+      <img src="../doctor/images/line.png" width="2" height="50" alt=""/>
+      <a href="#" class="bell"><span class="tip">3</span></a>
+      <img src="../doctor/images/line.png" width="2" height="50" alt=""/>
+      <div class="user">
+        <div class="pho"><img src="../doctor/images/photo.jpg" width="52" height="50" alt=""/></div>
+        <span><a id="name"></a>
+          <div class="user-info" id="twodm" onmousemove="show1()">
+            <div class="jtt"></div>
+            <div class="menu">
+              <div class="first">
+                <a href="admin_info.html">个人信息</a>
+              </div>
+              <div class="second">
+                <a href="#">通知<em>3</em></a>
+              </div>
+              <a href="#" class="quit" onclick=quit()>退出</a>
+            </div>
+          </div>
+        </span>
+      </div>
+      <img src="../doctor/images/line.png" width="2" height="50" alt=""/>
+      <a href="#" class="notice" id="notice"></a>
+    </div>
+  </div>
+
+  <!--左侧栏begin-->
+  <div class="left-bar" id="left-bar">
+    <ul>
+      <li><a href="admin_patientList.html" class="synergy">患者清单<em>患者清单</em></a></li>
+      <li><a href="admin_doctorList.html" class="movie">医生清单<em>医生清单</em></a></li>
+      <li><a href="hospital_news.html" class="computer">重大新闻<em>重大新闻</em></a></li>
+      <li><a href="hospital_situation.html" class="results">医院概况<em>医院概况</em></a></li>
+      <li><a href="hospital_honor.html" class="synergy">医院荣誉<em>医院荣誉</em></a></li>
+      <li><a href="hospital_international.html" class="drug">国际合作<em>国际合作</em></a></li>
+      <li><a href="hospital_mednews.html" class="results">医学前沿<em>医学前沿</em></a></li>
+      <li><a href="hospital_party.html" class="movie">基层党建<em>基层党建</em></a></li>
+    </ul>
+  </div>
+  <!--左侧栏end-->
+  <!--模块-->
+  <div id="main">
+    <div class="left-side">
+      <div class="main_visual">
+        <div class="main_image">
+          <ul>
+            <li>
+              <div class="mode">
+                <ul class="square">
+                  <div class="slide">
+                    <div id="slides">
+                      <div class="scroimg" style="left:0px;">
+                        <a href="#"><img src="../doctor/images/aa.jpg" width="221" height="331"
+                                         alt=""></a>
+                      </div>
+                      <div class="scrotext" style="bottom:0px;">
+                        <h4><a href="#">某医院成立医联体云平台</a></h4>
+                        <p>1111</p>
+                      </div>
+                      <div class="scroimg" style="left: -950px;">
+                        <a href="#"><img src="../doctor/images/bb.jpg" width="221" height="331"
+                                         alt=""></a>
+                      </div>
+                      <div class="scrotext" style="bottom: -950px;">
+                        <h4><a href="#">医生正在给患者看病</a></h4>
+                        <p>22222</p>
+                      </div>
+                      <div class="scroimg" style="left: -950px;">
+                        <a href="#"><img src="../doctor/images/aa.jpg" width="221" height="331"
+                                         alt=""></a>
+                      </div>
+                      <div class="scrotext" style="bottom:-950px;">
+                        <h4><a href="#">某医院成立医联体云平台</a></h4>
+                        <p>3333</p>
+                      </div>
+                      <div class="scroimg" style="left:-950px;">
+                        <a href="#"><img src="../doctor/images/bb.jpg" width="221" height="331"
+                                         alt=""></a>
+                      </div>
+                      <div class="scrotext" style="bottom:-950px;">
+                        <h4><a href="#">医生正在给患者看病</a></h4>
+                        <p>4444</p>
+                      </div>
+                      <div class="scroimg" style="left:-950px;">
+                        <a href="#"><img src="../doctor/images/aa.jpg" width="221" height="331"
+                                         alt=""></a>
+                      </div>
+                      <div class="scrotext" style="bottom:-950px;">
+                        <h4><a href="#">某医院成立医联体云平台</a></h4>
+                        <p>4444</p>
+                      </div>
+                      <div class="scroimg" style="left:-950px;">
+                        <a href="#"><img src="../doctor/images/bb.jpg" width="221" height="331"
+                                         alt=""></a>
+                      </div>
+                      <div class="scrotext" style="bottom: -950px;">
+                        <h4><a href="#">医生正在给患者看病</a></h4>
+                        <p>5555</p>
+                      </div>
+                    </div>
+                    <!--左右按钮-->
+                    <span id="prev"></span>
+                    <span id="next"></span>
+                    <!--<div id="pagination">
+                      <span onclick="gopaly(0)" onfocus="this.blur();" class="current">1</span>
+                      <span onclick="gopaly(1)" onfocus="this.blur();">2</span>
+                      <span onclick="gopaly(2)" onfocus="this.blur();"3></span>
+                      <span onclick="gopaly(3)" onfocus="this.blur();">4</span>
+                      <span onclick="gopaly(4)" onfocus="this.blur();">5</span>
+                      <span onclick="gopaly(5)" onfocus="this.blur();">6</span>
+                    </div>-->
+                  </div>
+                  <li>
+                    <div class="light-r img" onclick="location='hospital_situation.html'">
+                      <h2>医院概况</h2>
+                      <div class="icon"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="light-r red img" onclick="location='hospital_news.html'">
+                      <h2>重大新闻</h2>
+                      <div class="icon"></div>
+                    </div>
+                  </li>
+                  <div class="deep-b">
+                    <div class="messagge">
+                      <h2>统一预交金</h2>
+                      <p>截止2014年6月14日凌晨预缴金余额为22356,42元，其中70%...</p>
+                    </div>
+                    <div class="bbs"></div>
+                  </div>
+                </ul>
+              </div>
+              <div class="mode m-right">
+                <ul class="square">
+                  <li class="lan">
+                    <div class="light-b img" onclick="location='admin_patientList.html'">
+                      <h2>患者清单</h2>
+                      <div class="icon"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="green img" onclick="location='admin_doctorList.html'">
+                      <h2>医生清单</h2>
+                      <div class="icon"></div>
+                    </div>
+                  </li>
+                  <li class="lan">
+                    <div class="light-b img" onclick="location='hospital_party.html'">
+                      <h2>基层党建</h2>
+                      <div class="icon"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="green img" onclick="location='hospital_international.html'">
+                      <h2>国际合作</h2>
+                      <div class="icon"></div>
+                    </div>
+                  </li>
+                  <li class="lan">
+                    <div class="light-b img" onclick="location='hospital_honor.html'">
+                      <h2>所获荣誉</h2>
+                      <div class="icon"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="green img" onclick="location='hospital_mednews.html'">
+                      <h2>医学前沿</h2>
+                      <div class="icon"></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+<!--主内容结束-->
+</body>
+
+
+<!--[if IE 6]>
+<script src="js/EvPng.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+  EvPNG.fix("*");
+</script>
+<![endif]-->
+<script type="text/javascript">
+  $(document).ready(function () {
+
+  });
+</script>
+
+</html>

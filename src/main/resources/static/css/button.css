@@ -1,0 +1,52 @@
+
+/* Button样式 */
+.common_button {text-align:center; background: #428bca; color: #ffffff; }
+.common_button:hover { background: #3581c2; color: #ffffff!important; }
+
+/*修改*/
+.icon_change:before { content: "\e602"; }
+/*保存*/
+.icon_save:before { content: "\e601"; }
+/*返回*/
+.icon_return:before { content: "\e600"; }
+/*增加*/
+.icon_add:before { content: "\e609"; }
+/*删除*/
+.icon_delete:before { content: "\e608"; }
+/*搜索*/
+.icon_search:before { content: "\e604"; }
+/*确定*/
+.icon_yes:before { content: "\e605"; }
+/*下载*/
+.icon_down:before { content: "\e606"; }
+/*上传*/
+.icon_up:before { content: "\e603"; }
+/*导入*/
+.icon_in:before { content: "\e607"; }
+/*选择*/
+.icon_choose:before { content: "\e618"; }
+/*浏览*/
+.icon_see:before { content: "\e622"; }
+/*点赞*/
+.icon_zan:before { content: "\e621"; }
+/*下载2*/
+.icon_down2:before { content: "\e620"; }
+/*课程*/
+.icon_kecheng:before { content: "\e626"; }
+/*考核*/
+.icon_kaohe:before { content: "\e629"; }
+/*提问*/
+.icon_tiwen:before { content: "\e627"; }
+/*笔记*/
+.icon_biji:before { content: "\e625"; }
+/*正确*/
+.icon_right:before { content: "\e62d"; }
+/*错误*/
+.icon_fail:before { content: "\e62c"; }
+/*提醒*/
+.icon_warn:before { content: "\e628"; }
+/*申请*/
+.icon_shenqing:before { content: "\e637"; }
+
+/*查询icon*/
+.search_img { display:inline-block; background: url("../images/search.png"); width: 16px; height: 16px; margin-bottom: -3px;}
