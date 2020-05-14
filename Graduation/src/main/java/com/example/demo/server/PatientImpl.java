@@ -7,6 +7,7 @@ import com.example.demo.dao.PatientMapper;
 import com.example.demo.dao.RecordMapper;
 import com.example.demo.entity.Department;
 import com.example.demo.entity.Doctor;
+import com.example.demo.entity.DoctorFull;
 import com.example.demo.entity.OutRecord;
 import com.example.demo.entity.Patient;
 import com.example.demo.entity.Record;
@@ -92,5 +93,32 @@ public class PatientImpl {
       flag = false;
     }
     return flag;
+  }
+
+  public List<Patient> queryAllpatient() {
+    List<Patient> list = patientMapper.selectAllpatient();
+    return list;
+  }
+
+  public List<DoctorFull> queryAlldoctor() {
+    List<DoctorFull> list = new ArrayList();
+    List<Doctor> doctors = patientMapper.selectAlldoctor();
+    for (Doctor d : doctors) {
+      DoctorFull doctorFull = new DoctorFull();
+      Department department = patientMapper.selectDepById(d.getDocId());
+      doctorFull.setDoctor(d);
+      doctorFull.setDepartment(department);
+      list.add(doctorFull);
+    }
+    return list;
+  }
+
+  public DoctorFull queryDoctor_DetialsByDno(int dno) {
+    Doctor doctor = patientMapper.selectDoctor_DetialsByDno(dno);
+    Department department = patientMapper.selectDepById(doctor.getDocId());
+    DoctorFull doctorFull = new DoctorFull();
+    doctorFull.setDoctor(doctor);
+    doctorFull.setDepartment(department);
+    return doctorFull;
   }
 }

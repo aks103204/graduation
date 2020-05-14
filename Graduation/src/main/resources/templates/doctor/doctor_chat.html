@@ -51,61 +51,65 @@
       window.location = "../login.html";
     }
 
+    var todno;
+    var ddno = getCookie("dno");
     $(function () {
-      var dno = getCookie("dno");
-      var DOCTOR_INFO_URL = "http://localhost:8080/doctor/doctor_Info/" + dno;
-      $.ajax({
-        contentType: "application/json",
-        url: DOCTOR_INFO_URL,
-        dataType: "text json",
-        type: "post",
-        statusCode: {
-          200: function (data) {
-            $('#name1').val(data.docName);
-            $('#docId').val(data.docId);
-            $('#sex').val(data.docSex);
-            $('#age').val(data.docAge);
-            $('#department').val(data.docProId);
-            $('#phone').val(data.docPhone);
-            $('#qq').val(data.docQq);
-            $('#addr').val(data.docAddr);
-          },
-          404: function () {
-            alert("登陆失败！");
-            window.location = "index.jsp";
-          }
-        }
-      });
-    });
+      Show();
+      var url = decodeURI(window.location.href);
+      var argsIndex = url.split("?dno=");
+      var str = argsIndex[1].toString().split("#")
+      todno = str[0];
 
-    function doctor_Update_Info() {
-      var dno = getCookie("dno");
-      var name = $("#name1").val();
-      var sex = $("#sex").val();
-      var age = $("#age").val();
-      var proid = $("#department").val();
-      var phone = $("#phone").val();
-      var addr = $("#addr").val();
-      var DOCTOR_UPDATE_INFO_URL = "http://localhost:8080/doctor/doctor_Update_Info/" + dno + "/"
-          + name
-          + "/" + sex + "/" + age + "/" + proid + "/" + phone + "/" + addr;
-      $.ajax({
-        contentType: "application/json",
-        url: DOCTOR_UPDATE_INFO_URL,
-        dataType: "text json",
-        type: "POST",
-        statusCode: {
-          200: function (data) {
-            alert("修改成功！")
-            window.location.href = "doctor_info.html";
-          },
-          404: function () {
-            alert("修改失败！");
-            window.location.href = "doctor_info.html";
-          }
-        }
-      });
+    });
+    var socket;
+    if (typeof(WebSocket) == "undefined") {
+      console.log("您的浏览器不支持WebSocket");
+    } else {
+      console.log("您的浏览器支持WebSocket");
+
+      var socketUrl = "http://localhost:8080/imserver/" + ddno;
+      socketUrl = socketUrl.replace("https", "ws").replace("http", "ws");
+      console.log(socketUrl);
+      if (socket != null) {
+        socket.close();
+        socket = null;
+      }
+      socket = new WebSocket(socketUrl);
+      //打开事件
+      socket.onopen = function () {
+        console.log("websocket已打开");
+        //socket.send("这是来自客户端的消息" + location.href + new Date());
+      };
+      //获得消息事件
+      socket.onmessage = function (msg) {
+        console.log(msg.data);
+        //发现消息进入    开始处理前端触发逻辑
+      };
+      //关闭事件
+      socket.onclose = function () {
+        console.log("websocket已关闭");
+      };
+      //发生了错误事件
+      socket.onerror = function () {
+        console.log("websocket发生了错误");
+      }
     }
+
+    function sendMessage() {
+      if (typeof(WebSocket) == "undefined") {
+        console.log("您的浏览器不支持WebSocket");
+      } else {
+        console.log("您的浏览器支持WebSocket");
+        console.log('{"toUserId":"' + todno + '","contentText":"' + $("#message").val() + '"}');
+        socket.send('{"toUserId":"' + todno + '","contentText":"' + $("#message").val() + '"}');
+      }
+    }
+
+    function Show() {
+      $("#time1").html(new Date().toLocaleString());
+      window.setTimeout(Show, 1000);
+    }
+
   </script>
 </head>
 
@@ -130,12 +134,12 @@
       <img src="images/line.png" width="2" height="50" alt=""/>
       <div class="user">
         <div class="pho"><img src="images/photo.jpg" width="52" height="50" alt=""/></div>
-        <span id="name">张末末
+        <span id="name">
           <div class="user-info" id="twodm">
             <div class="jtt"></div>
             <div class="menu">
               <div class="first">
-                <a href="#">个人信息</a>
+                <a href="doctor_info.html">个人信息</a>
               </div>
               <div class="second">
                 <a href="#">通知<em>3</em></a>
@@ -283,8 +287,8 @@
     <!---->
     <div class="in-con">
       <div class="in-con-top">
-        <span class="un-edit">申请人：陈医生</span>
-        <span class="un-edit">时间：2014-06-10 &nbsp;14:40</span>
+        <span class="un-edit">申请人：<span id="name1"></span></span>
+        <span class="un-edit">时间：<span id="time1"></span></span>
         <div class="appmenu">
           <label>医生工号：</label>
           <input name="" id="docId" type="text" readonly/>
@@ -292,54 +296,23 @@
       </div>
 
       <div class="in-form">
-        <div class="form-h">
-          <div class="appmenu">
-            <label>姓名：</label>
-            <input name="" id="name1" type="text" readonly/>
-          </div>
-          <div class="clear"></div>
-          <div class="appmenu">
-            <label>性别：</label>
-            <input name="" id="sex" type="text" readonly/>
-          </div>
-          <div class="clear"></div>
-          <div class="appmenu">
-            <label>年龄：</label>
-            <input name="" id="age" type="text" class="age" readonly/>
-          </div>
-          <div class="clear"></div>
-          <div class="appmenu">
-            <label>科室：</label>
-            <input name="" id="department" type="text" readonly/>
-          </div>
-          <div class="clear"></div>
-          <div class="appmenu">
-            <label>电话(可修改)：</label>
-            <input name="" id="phone" type="text"/>
-          </div>
-          <div class="clear"></div>
-          <div class="appmenu">
-            <label>地址(可修改)：</label>
-            <input name="" id="addr" type="text" class="address"/>
-          </div>
-          <div class="clear"></div>
+        <div class="contact">
+          <ul>
+            <li class="xz">
+              <ul>
+                <textarea cols="" rows="" class="textarea" id="message">请输入您的信息...</textarea>
+                <a href="#" class="bar" onclick=sendMessage()>发送消息</a>
+              </ul>
+            </li>
+          </ul>
         </div>
 
-        <!--按钮-->
-        <div class="form-btn">
-          <span class="jz">
-            <a href="javascript:;" class="quer" onclick=doctor_Update_Info()></a>
-            <a href="javascript:;" class="cancel"></a>
-          </span>
-        </div>
+        <div class="clear"></div>
       </div>
 
-      <div class="clear"></div>
     </div>
-
   </div>
-</div>
-<!--主内容结束-->
+  <!--主内容结束-->
 </body>
 
 

@@ -7,103 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8f51a8d-788f-49ec-83d8-5ddd4560c632" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/controller/DoctorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/controller/PatientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/dao/AdminMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/dao/DepartmentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/dao/DoctorMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/dao/OutRecordMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/dao/PatientMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/dao/RecordMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/entity/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/entity/Department.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/entity/Doctor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/entity/OutRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/entity/Patient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/entity/Record.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/server/AdminImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/server/DoctorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/server/PatientImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/socket/MyWebsocketServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/socket/WebsocketConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/tool/RedisJava.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/java/com/example/demo/tool/RedisUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/css/admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/css/amazeui.cropper.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/css/amazeui.flat.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/css/amazeui.flat.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/css/amazeui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/css/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/i/app-icon72x72@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/i/examples/admin-chrome.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/i/examples/admin-firefox.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/i/examples/admin-ie.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/i/examples/admin-opera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/i/examples/admin-safari.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/i/examples/adminPage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/i/examples/blogPage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/i/examples/landing.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/i/examples/landingPage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/i/examples/loginPage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/i/examples/sidebarPage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/i/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/i/startup-640x1096.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/js/amazeui.ie8polyfill.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/js/amazeui.ie8polyfill.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/js/amazeui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/js/amazeui.widgets.helper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/js/amazeui.widgets.helper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/js/cropper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/js/handlebars.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/amaze/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/contextjs/css/context.standalone.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/contextjs/js/context.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/custom/css/custom_up_img.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/custom/css/font-awesome.4.6.0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/custom/js/custom_up_img.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/jquery/jquery-2.1.4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/layer/extend/layer.ext.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/layer/layer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/layer/skin/default/icon-ext.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/layer/skin/default/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/layer/skin/default/loading-0.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/layer/skin/default/loading-1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/layer/skin/default/loading-2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/layer/skin/layer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/layer/skin/layer.ext.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/laypage/laypage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/laypage/skin/laypage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/static/plugins/sockjs/sockjs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/templates/doctor/css/layout.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/templates/doctor/doctor_info.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/templates/doctor/images/login.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/templates/doctor/images/register.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/templates/doctor/js/jquery-3.1.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/templates/doctor/js/jquery.cookie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/templates/patient/css/layout.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/templates/patient/patient_register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Graduation/src/test/java/com/example/demo/RedisTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/unnamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/charles/socket/TestConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/charles/socket/TestSocket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/jsda.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Graduation/src/main/resources/templates/doctor/doctor_chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Graduation/src/test/java/com/example/demo/RedisTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -131,11 +37,12 @@
     <session id="178593703">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.21" value="1" />
-          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -175,7 +82,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
+            <state relative-caret-position="411">
               <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
             </state>
           </provider>
@@ -196,7 +103,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/charles/socket/TestSocket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
+            <state relative-caret-position="336">
               <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -287,8 +194,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -355,6 +260,8 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -474,16 +381,19 @@
       <workItem from="1587545504269" duration="3626000" />
       <workItem from="1587565021264" duration="965000" />
       <workItem from="1587609592551" duration="5903000" />
+      <workItem from="1588132963860" duration="962000" />
+      <workItem from="1588567440322" duration="28000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10494000" />
+    <option name="totallyTimeSpent" value="11484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25670242" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18632708" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -538,20 +448,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/charles/socket/TestSocket.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/jsda.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="36" />
+        <state relative-caret-position="411">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -565,10 +465,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charles/socket/TestSocket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+        <state relative-caret-position="336">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jsda.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="36" />
         </state>
       </provider>
     </entry>
